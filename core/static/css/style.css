@@ -1,3 +1,5 @@
+/*estilo nosotros*/
+
 .nosotros {
     width: 100%;
     padding: 5px;
@@ -44,6 +46,9 @@
     font-size: 30px !important;
     ;
 }
+
+
+/* estilos del footer */
 
 footer {
     width: 100%;
@@ -101,13 +106,14 @@ input[type="radio"]:checked~label {
     min-height: 100vh;
 }
 
+
+/* estilo navbar */
+
 .header .navbar {
-    background-color: transparent !important;
+    background-color: rgb(0, 0, 0) !important;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     font-size: x-large;
-    font-weight: 100;
-    line-height: 200%;
 }
 
 
@@ -146,13 +152,6 @@ input[type="radio"]:checked~label {
 
 
 /* donaciones */
-
-
-/* body {
-    background: #444;
-    margin: 0;
-    font-family: monospace;
-} */
 
 
 /*Estilos de la galeria*/
