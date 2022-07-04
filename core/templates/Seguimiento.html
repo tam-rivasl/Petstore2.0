@@ -1,3 +1,4 @@
+{% extends 'index.html' %} {% load static %} {% block content %}
 <form class="row g-3" id="form-b">
     <div class="col-auto">
         <label for="staticSeg class=visually-hidden">N° de seguimiento</label>
@@ -27,5 +28,5 @@
 <br>
 
 
-<script src="js/seguimiento.js"></script>
-</body>
+<script src="{%static 'js/seguimiento.js' %}"></script>
+</body>{% endblock %}

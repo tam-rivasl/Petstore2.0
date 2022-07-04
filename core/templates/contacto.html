@@ -1,3 +1,4 @@
+{% extends 'index.html' %} {% load static %} {% block content %}
 <!-- formulario -->
 <form class="col-5" id="form-a">
 
@@ -52,7 +53,8 @@
 </form>
 
 <!-- valiadacion formulario  -->
-<script src="/js/scripts.js"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
 
 <!-- scripts de librerias -->
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="{% static 'https://code.jquery.com/jquery-3.3.1.js' %}"></script>
+{% endblock %}

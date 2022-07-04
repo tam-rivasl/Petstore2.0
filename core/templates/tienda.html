@@ -1,3 +1,4 @@
+{% extends 'index.html' %} {% load static %} {% block content %}
 <br>
 <h1 class="corr">Tienda</h1>
 <br>
@@ -9,7 +10,7 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="card">
-                <img src="img/correa1.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/correa1.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Correa turquesa</h5>
                     <p class="card-text">
@@ -52,7 +53,7 @@
 
         <div class="col-lg-4 d-none d-lg-block">
             <div class="card">
-                <img src="img/correa2.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/correa2.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Correa rosa</h5>
                     <p class="card-text">
@@ -94,7 +95,7 @@
 
         <div class="col-lg-4 d-none d-lg-block">
             <div class="card">
-                <img src="img/correa3.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/correa3.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Correa ultra resistente</h5>
                     <p class="card-text">
@@ -136,7 +137,7 @@
 
         <div class="col-lg-4">
             <div class="card">
-                <img src="img/bandana1.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/bandana1.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Bandana simple</h5>
                     <p class="card-text">
@@ -178,7 +179,7 @@
 
         <div class="col-lg-4 d-none d-lg-block">
             <div class="card">
-                <img src="img/bandana2.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/bandana2.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Bandana rock</h5>
                     <p class="card-text">
@@ -222,7 +223,7 @@
 
         <div class="col-lg-4 d-none d-lg-block">
             <div class="card">
-                <img src="img/bandana3.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/bandana3.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Bandana color liso simple</h5>
                     <p class="card-text">
@@ -265,7 +266,7 @@
 
         <div class="col-lg-4">
             <div class="card">
-                <img src="img/iden1.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/iden1.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Placa metalica simple</h5>
                     <p class="card-text">
@@ -307,7 +308,7 @@
 
         <div class="col-lg-4 d-none d-lg-block">
             <div class="card">
-                <img src="img/iden2.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/iden2.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Placa gps DIY</h5>
                     <p class="card-text">
@@ -349,7 +350,7 @@
 
         <div class="col-lg-4 d-none d-lg-block">
             <div class="card">
-                <img src="img/iden3.jpg" class="card-img-top" width="200px" height="300px" />
+                <img src="{% static 'img/iden3.jpg' %}" class="card-img-top" width="200px" height="300px" />
                 <div class="card-body">
                     <h5 class="card-title">Placa generica</h5>
                     <p class="card-text">
@@ -397,4 +398,4 @@
 <br>
 <hr>
 <br>
-<br>
+<br> {% endblock %}

@@ -1,3 +1,5 @@
+{% load static %}
+
 <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
@@ -7,35 +9,35 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" onclick="cambiar_pagina('inicio')">INICIO</a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">INICIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="cambiar_pagina('nosotros')">NOSOTROS</a>
+                    <a class="nav-link" href="{% url 'nosotros' %}">NOSOTROS</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" onclick="cambiar_pagina('tienda')" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> TIENDA</a>
+                    <a class="nav-link dropdown-toggle" href="{% url 'tienda' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> TIENDA</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" onclick="cambiar_pagina('correas')">CORREAS</a></li>
+                        <li><a class="dropdown-item" href="{% url 'correas' %}">CORREAS</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" onclick="cambiar_pagina('bandanas')">BANDANAS</a></li>
+                        <li><a class="dropdown-item" href="{% url 'bandanas' %}">BANDANAS</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" onclick="cambiar_pagina('identificaciones')">IDENTIFICACIONES</a></li>
+                        <li><a class="dropdown-item" href="{% url 'identificaciones' %}">IDENTIFICACIONES</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " onclick="cambiar_pagina('donaciones')"> DONACIONES</a>
+                    <a class="nav-link " href="{% url 'donaciones' %}"> DONACIONES</a>
                 </li>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " onclick="cambiar_pagina('contacto')"> CONTACTO</a>
+                    <a class="nav-link " href="{% url 'contacto' %}"> CONTACTO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " onclick="cambiar_pagina('Seguimiento')"> SEGUMIENTO
-                        <img src="img/bus.png" alt="" width="40" height="40" class="d-inline-block align-text-top "> 
+                    <a class="nav-link " href="{% url 'seguimiento' %}"> SEGUMIENTO
+                        <img src="{% static 'img/bus.png' %}" alt="" width="40" height="40" class="d-inline-block align-text-top "> 
                     </a>
                 </li>
 
@@ -43,13 +45,3 @@
         </div>
     </div>
 </nav>
-
-
-
-<script>
-    function cambiar_pagina(pagina) {
-        $(function() {
-            $("#pagina_actual").load("paginas/" + pagina + ".html");
-        });
-    }
-</script>
