@@ -33,5 +33,8 @@ urlpatterns = [
     path('nosotros/',views.nosotros, name="nosotros"),
     path('seguimiento/',views.seguimiento, name="seguimiento"),
     path('tienda/',views.tienda, name="tienda"),
+    path('login/',views.login, name="login"),
+    path('carrito/',views.carrito, name="carrito"),
+    path('historial/',views.historial, name="historial"),
 ]
 

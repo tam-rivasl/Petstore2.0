@@ -84,9 +84,16 @@ WSGI_APPLICATION = 'PetstoreDj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/xe',
+        'USER': 'C##PRUEBA4',
+        'PASSWORD': 'PRUEBA4',
+        'TEST': {
+            'USER':'default_test',
+            'TBLESPACE': 'default_test_tbls',
+            'TBLESPACE_TEM': 'default_test_tbls_tmp',
+        },
+    },
 }
 
 

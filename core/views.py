@@ -39,6 +39,14 @@ def tienda(request):
 def inicio(request):
     return render(request,'inicio.html')
 
+def login(request):
+    return render(request,'login.html')
+
+def historial(request):
+    return render(request,'historial.html')
+
+def carrito(request):
+    return render(request,'carrito.html')
 
 
 
