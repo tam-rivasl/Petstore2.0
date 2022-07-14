@@ -1,17 +1,31 @@
-{% extends 'index.html' %} {% load static %} {% block content %}
-<div class="login-box">
 
-    <h1>Iniciar Sesion</h1>
-    <form method="post">
-        <!-- USERNAME INPUT -->
-        <label for="username">Email</label>
-        <input type="text" placeholder="Ingrese Usuario" id="usuario" required>
-        <!-- PASSWORD INPUT -->
-        <label for="PASSWORD">Contraseña</label>
-        <input type="PASSWORD" placeholder="Ingrese Contraseña" id="contraseña" required>
-        <input type="button" value="Iniciar Sesion" onclick="login_fun()">
-        <a href="#">Olvidaste tu contraseña?</a><br>
-        <a href="{% url 'Registro' %}">No tienes una cuenta?</a>
+{% extends 'index.html' %} {% load static %} {% block content %}
+title>Iniciar Sesión</title>
+<div class="login-box">
+    <form class="col-5" id="form-a" method="post">
+        {% csrf_token %}
+        <h1 class="Tit-form text-center">Iniciar Sesión</h1>
+        <br>
+        <br>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Usuario</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese Usuario">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Contraseña</label>
+            <input type="password" class="form-control" placeholder="Ingrese Contraseña" id="password" name="password" required>
+        </div>
+        {% if form.errors %}
+        <center><p style="color:red">Usuario o Contraseña incorrectos</p></center>
+        {% endif %}
+        <br>
+        
+        <div id="btn-contacto">
+            <center>
+            <button type="submit" class="btn btn-primary" >Iniciar Sesión</button>
+            </center>
+        </div>
+        <br>
     </form>
 </div>
 {% endblock %}

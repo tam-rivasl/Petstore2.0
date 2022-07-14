@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from distutils import core
 from pathlib import Path
+from pickle import TRUE
 from re import template
 
 import PetstoreDj
@@ -27,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g!g&y-#xo!pg759&er05%rr!sq8!(ms_sj4ozl$o6slhph@9-!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = TRUE
 
 ALLOWED_HOSTS = []
 
@@ -42,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'api',
+    'rest_framework',
+    'PetstoreDj',
     
     
     
@@ -85,9 +89,9 @@ WSGI_APPLICATION = 'PetstoreDj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xe',
-        'USER': 'C##PRUEBA4',
-        'PASSWORD': 'PRUEBA4',
+        'NAME': '127.0.0.1:1521/orcl',
+        'USER': 'EXAMEN123',
+        'PASSWORD': 'EXAMEN123',
         'TEST': {
             'USER':'default_test',
             'TBLESPACE': 'default_test_tbls',

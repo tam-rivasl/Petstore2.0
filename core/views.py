@@ -1,52 +1,115 @@
 
-from django.shortcuts import render
-# Create your views here.
+from itertools import product
+from re import template
+from django.shortcuts import redirect, render
+
+from core.forms import *
+from .models import Carrito, Estado_despacho, Producto  
+
+
 
 def index(request):
-    return render(request,'index.html')
+    template_name = "index.html"
+    return render(request, template_name)
 
 def bandanas(request):
-    return render(request,'bandanas.html')
+    template_name = "bandanas.html"
+    return render(request, template_name)
 
 def contacto(request):
-    return render(request,'contacto.html')
+    template_name = "contacto.html"
+    return render(request, template_name)
 
 def correas(request):
-    return render(request,'correas.html')
+    template_name = "correas.html"
+    return render(request,template_name)
 
 def donaciones(request):
-    return render(request,'donaciones.html')
+    template_name = "donaciones.html"
+    return render(request, template_name)
 
 def footer(request):
-    return render(request,'footer.html')
+    template_name = "footer.html"
+    return render(request, template_name)
 
 def identificaciones(request):
-    return render(request,'identificaciones.html')
+    template_name = "identificaciones.html"
+    return render(request, template_name)
 
 def nav(request):
-    return render(request,'nav.html')
-
+    template_name = "nav.html"
+    return render(request, template_name)
 
 def nosotros(request):
-    return render(request,'nosotros.html')
+    template_name = "nosotros.html"
+    return render(request, template_name)
 
 def seguimiento(request):
-    return render(request,'seguimiento.html')
+    template_name = "seguimiento.html"
+
+    estado_despacho = Estado_despacho.objects.all
+    data = {
+        'estado_despacho': estado_despacho
+    }
+    return render(request, template_name, data)
 
 def tienda(request):
-    return render(request,'tienda.html')
+    template_name = "tienda.html"
+    producto = Producto.objects.all
+
+    data = {
+        'producto': producto
+    }
+    return render(request,template_name, data)
 
 def inicio(request):
-    return render(request,'inicio.html')
+    template_name = "inicio.html"
+    return render(request, template_name)
 
 def login(request):
-    return render(request,'login.html')
+    template_name = "login.html"
+    return render(request, template_name)
+   
 
-def historial(request):
-    return render(request,'historial.html')
+def ofertas(request):
+    template_name = "oferta.html"
+    return render(request, template_name)
+
 
 def carrito(request):
-    return render(request,'carrito.html')
+    carrito = Carrito.objects.all
+    
+    data = {
+        'carrito': carrito
+    }
+    return render(request,'carrito.html', data)
+
+def agregar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.agregar(producto)
+    return redirect("Tienda")
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.eliminar(producto)
+    return redirect("Tienda")
+
+def restar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.restar(producto)
+    return redirect("Tienda")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("Tienda")
+
+def registro(request):
+    template_name = "registro.html"
+    return render(request, template_name)
 
 
 
